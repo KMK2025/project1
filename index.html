@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>학생 출석부</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>학생 출석부</h1>
+
+    <section class="add-student">
+      <h2>학생 추가</h2>
+      <form id="student-form">
+        <input
+          type="text"
+          id="student-name"
+          placeholder="학생 이름을 입력하세요"
+          required
+        />
+        <button type="submit">추가</button>
+      </form>
+    </section>
+
+    <section class="attendance">
+      <div class="attendance-header">
+        <h2>오늘 출석 현황</h2>
+        <div class="actions">
+          <button id="mark-all-present">모두 출석</button>
+          <button id="clear-all">모두 결석</button>
+          <button id="save-excel">엑셀로 저장</button>
+        </div>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>출석</th>
+          </tr>
+        </thead>
+        <tbody id="student-table-body">
+          <!-- JS로 학생 행이 추가됩니다 -->
+        </tbody>
+      </table>
+
+      <div class="summary">
+        <div>총 학생 수: <span id="total-count">0</span>명</div>
+        <div>출석 인원: <span id="present-count">0</span>명</div>
+        <div>결석 인원: <span id="absent-count">0</span>명</div>
+        <div>출석률: <span id="present-rate">0</span>%</div>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
